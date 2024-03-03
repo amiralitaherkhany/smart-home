@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('/iran.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: 'IranSans', Helvetica, sans-serif;
+    display: inline-block;
+    text-align: center;
+    /* background-image: url('gradiant.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    /* background: #000046;
+    background: -webkit-linear-gradient(to right, #a00038, #54062b);
+    background: linear-gradient(to right, #a00038, #54062b); */
+    background: linear-gradient(to top left, #cc00ff 0%, #003366 100%);
+
+
+
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+
+    animation: head;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.topnav {
+    overflow: hidden;
+    /* background-color: #2b1897; */
+
+}
+
+body {
+    margin: 0;
+}
+
+.content {
+    padding: 50px;
+}
+
+.card-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* .card {
+    background-color: #ffffff;
+    box-shadow: 2px 2px 12px 5px rgba(140, 140, 140, .5);
+    border: solid #000000 4px;
+    border-radius: 50px;
+}
+
+.card:hover {
+    animation: identifier;
+    animation-duration: 10s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+
+} */
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff
+}
+
+.reading {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+
+/* CSS */
+.button {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #cc00ff 0, #003366 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(66, 35, 64, 0.3) 0 7px 13px -3px, rgba(108, 58, 111, 0.5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+/* .button:focus {
+    box-shadow: #c73ce0 0 0 0 1.5px inset, rgba(66, 35, 65, 0.4) 0 2px 4px, rgba(62, 35, 66, 0.3) 0 7px 13px -3px, #e03ce0 0 -3px 0 inset;
+} */
+
+.button:hover {
+    /* box-shadow: rgba(63, 35, 66, 0.4) 0 4px 8px, rgba(63, 35, 66, 0.3) 0 7px 13px -3px, #bf3ce0 0 -3px 0 inset; */
+    transform: translateY(-2px);
+}
+
+.button:active {
+    /* box-shadow: #e03cdd 0 3px 7px inset; */
+    transform: translateY(2px);
+}
+
+@keyframes identifier {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+
+    }
+
+}
+
+@keyframes head {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+@property --bg-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+}
+
+/**
+   * To animate the gradient, we set the custom property to 1 full
+   * rotation. The animation starts at the default value of `0deg`.
+   */
+@keyframes spin {
+    to {
+        --bg-angle: 360deg;
+    }
+}
+
+.card,
+h1 {
+    /* add the animation, but pause it by default */
+    animation: spin 2.5s infinite linear;
+    /**
+     * Using `background-origin` we can create a “border” using two gradients. And to
+     * make the gradients better-looking, we use OKLCH.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin
+     * @see https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl
+     */
+    background: linear-gradient(to bottom, oklch(0.1 0.2 240/0.95), oklch(0.1 0.2 240/0.95)) padding-box, conic-gradient(from var(--bg-angle) in oklch longer hue, oklch(0.85 0.37 0) 0 0) border-box;
+    /* extends to outer border edges */
+    /* a clear border lets the background gradient shine through */
+    border: 6px solid transparent;
+    /* unpause the animation on hover */
+}
+
+
+.card,
+h1 {
+    border-radius: 50px;
+    box-shadow: 0.125rem 0.25rem 0.25rem 0.5rem oklch(0.1 0.37 315/0.25);
+    color: white;
+    padding: 1rem;
+    /* width: min(400px, 90vw); */
+}

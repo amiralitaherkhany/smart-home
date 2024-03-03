@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> خانه هوشمند</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <h1> خانه هوشمند</h1>
+    </div>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card">
+                <p class="card-title"><i class="fas fa-thermometer-threequarters" style="color:#059e8a;"></i>
+                    دما</p>
+                <p class="reading"><span id="temperature"></span> &deg;C</p>
+            </div>
+            <div class="card">
+                <p class="card-title"> رطوبت هوا</p>
+                <p class="reading"><span id="humidity"></span> &percnt;</p>
+            </div>
+            <div class="card">
+                <p class="card-title"> رطوبت خاک</p>
+                <p class="reading"><span id="soil"></span>&percnt;</p>
+            </div>
+            <div class="card">
+                <p class="card-title"> هشدار</p>
+                <p class="reading"><span id="text"></span></p>
+            </div>
+            <div class="card">
+                <p class="card-title"> PIR</p>
+                <p class="reading">STATE: <span id="PIR_STATE"></span></p>
+                <p class="reading">Activity: <span id="PIR_WORK"></span></p>
+                <p><button id="button1" class="button">Toggle</button></p>
+            </div>
+            <div class="card">
+                <p class="card-title"> Fan</p>
+                <p class="reading">STATE: <span id="fan_state"></span></p>
+                <p class="reading">Control: <span id="fan_auto"></span></p>
+                <p><button id="button2" class="button">Toggle</button></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
